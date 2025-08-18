@@ -7,7 +7,14 @@ from pypdf import PdfReader
 import gradio as gr
 
 
-load_dotenv(override=True)
+load_dotenv("../.env",override=True)
+
+api_key = os.getenv("OPENAI_API_KEY")
+base_url = os.getenv("BASE_URL")
+
+# load_dotenv(override=True)
+openai_client = OpenAI(base_url=base_url, api_key=api_key)
+
 
 def push(text):
     requests.post(
@@ -76,7 +83,7 @@ tools = [{"type": "function", "function": record_user_details_json},
 class Me:
 
     def __init__(self):
-        self.openai = OpenAI()
+        self.openai = openai_client
         self.name = "Ed Donner"
         reader = PdfReader("me/linkedin.pdf")
         self.linkedin = ""
