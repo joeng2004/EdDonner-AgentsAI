@@ -1,0 +1,8 @@
+llm = LLM(model="openai/gpt-4o-mini")
+llm = LLM(model="ollama/llama3.2",base_url="http://localhost:11434")
+
+# install crewai
+uv tool install crewai 
+
+
+# Watch till: Aug 27, 944am ==> 004-Day 1
