@@ -1,6 +1,21 @@
 #!/usr/bin/env python
 import sys
 import warnings
+import os
+
+from dotenv import load_dotenv, find_dotenv
+
+# Loads environment variables from .env file at the project root
+load_dotenv(find_dotenv())
+
+api_key = os.getenv("OPENAI_API_KEY")
+base_url = os.getenv("BASE_URL")
+
+# Set the environment variables that CrewAI/litellm expects
+os.environ["OPENAI_API_KEY"] = api_key
+if base_url:
+    os.environ["OPENAI_API_BASE"] = base_url
+
 
 from datetime import datetime
 

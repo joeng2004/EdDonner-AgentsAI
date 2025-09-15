@@ -19,3 +19,4 @@ judge:
     your own views, and making a decision based purely on the merits of the argument.
     The motion is: {motion}
   llm: anthropic/claude-3-7-sonnet-latest
+  mover:

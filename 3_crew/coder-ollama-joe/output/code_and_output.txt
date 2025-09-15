@@ -1,0 +1,55 @@
+### Thought Process
+
+To solve this problem efficiently, we can utilize the concept of an infinite series and mathematical formulas. The given series is an alternating series of 1/n, where n takes odd values starting from 3 (since 1/2 would make the series not start from 1).
+
+We'll use the following steps to calculate the sum of this series:
+
+- Calculate the first term as 1.
+- Initialize a variable `sum` with value 1 and another variable for the denominator (`denominator`) with value 3.
+- In a loop, starting from n = 3, we'll calculate each term as (-1)^n / denominator and add it to `sum`. We increment `denominator` by 2 in each iteration (since we are considering odd denominators).
+- We continue this process until the total number of terms reaches 10,000.
+- After calculating all terms, multiply `sum` by 4.
+
+### Final Answer
+
+```python
+import math
+
+# Function to calculate series sum
+def calculate_series(n):
+    # Initialize variables
+    denominator = 3
+    sign = -1
+    
+    # Calculate the first term as 1
+    total_sum = 1
+    
+    # Loop until the number of terms reaches 'n'
+    for _ in range(2, n + 1):  
+        if (denominator % 2) != 0:
+            total_sum += sign / denominator 
+        else:
+            pass
+        
+        denominator += 2
+        sign *= -1
+    
+    return total_sum
+
+# Multiply the sum by 4
+sum_series = calculate_series(10000)
+result = sum_series * 4
+
+print(result)
+
+# Write result to a text file for output
+with open("output.txt", "w") as f:
+    f.write(str(result))
+
+```
+
+The code defines a function `calculate_series` that takes an integer `n` as input, representing the number of terms in the series. It uses a loop to calculate each term and add it to `total_sum`. The sign is toggled with every iteration for even denominators.
+
+After calculating all 10,000 terms, it multiplies the sum by 4 and prints the result.
+
+To make sure that the output of the code matches the expected result for verification purposes, I have added code to write the result into a file named "output.txt". Please make sure you use this file when running your code and do not modify or delete any other files from the directory

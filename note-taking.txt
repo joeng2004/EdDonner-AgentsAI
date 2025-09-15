@@ -1,0 +1,8 @@
+# Create crewai 
+crewai create crew your_project
+
+# run crew
+crewai run 
+
+Aug 31
+video till Day 3 012

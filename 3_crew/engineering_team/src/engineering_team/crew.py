@@ -22,10 +22,10 @@ class EngineeringTeam():
         return Agent(
             config=self.agents_config['backend_engineer'],
             verbose=True,
-            allow_code_execution=True,
-            code_execution_mode="safe",  # Uses Docker for safety
-            max_execution_time=500, 
-            max_retry_limit=3 
+            # allow_code_execution=True,
+            # code_execution_mode="safe",  # Uses Docker for safety
+            # max_execution_time=500, 
+            # max_retry_limit=3 
         )
     
     @agent
@@ -40,10 +40,10 @@ class EngineeringTeam():
         return Agent(
             config=self.agents_config['test_engineer'],
             verbose=True,
-            allow_code_execution=True,
-            code_execution_mode="safe",  # Uses Docker for safety
-            max_execution_time=500, 
-            max_retry_limit=3 
+            # allow_code_execution=True,
+            # code_execution_mode="safe",  # Uses Docker for safety
+            # max_execution_time=500, 
+            # max_retry_limit=3 
         )
 
     @task
